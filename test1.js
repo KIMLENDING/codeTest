@@ -111,7 +111,8 @@ function solution(friends, gifts) {
     return total[friend].추가선물;
   });
 
-  answer = Math.max.apply(null, answers);
+  answer = Math.max(...answers);
+
   return answer;
 }
 
