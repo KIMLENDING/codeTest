@@ -1,14 +1,11 @@
 /**https://school.programmers.co.kr/learn/courses/30/lessons/258712?language=javascript */
-const friends = ["muzi", "ryan", "frodo", "neo"];
+const friends = ["joy", "brad", "alessandro", "conan", "david"];
 const gifts = [
-  "muzi frodo",
-  "muzi frodo",
-  "ryan muzi",
-  "ryan muzi",
-  "ryan muzi",
-  "frodo muzi",
-  "frodo ryan",
-  "neo muzi",
+  "alessandro brad",
+  "alessandro joy",
+  "alessandro conan",
+  "david alessandro",
+  "alessandro david",
 ];
 
 const list = (friends, gifts) => {
@@ -69,7 +66,7 @@ const answer1 = (test) => {
         test[보낸사람][받은사람] === undefined &&
         test[받은사람][보낸사람] === undefined
       ) {
-        console.log(보낸사람, "-", 받은사람);
+        // console.log(보낸사람, "-", 받은사람);
         // 둘다 선물을 주고 받은 기록이 없다면 지수가 높은 사람이 선물을 받는다.
         if (test[보낸사람].선물지수 > test[받은사람].선물지수) {
           test[보낸사람].추가선물++;
@@ -90,15 +87,15 @@ const answer1 = (test) => {
         if (test[받은사람][보낸사람] === undefined) {
           // 받은 기록만 있는 경우
           test[보낸사람].추가선물++;
-          console.log("받은 기록만 있는 경우", test[보낸사람].추가선물);
+          //   console.log("받은 기록만 있는 경우", test[보낸사람].추가선물);
         } else {
           test[보낸사람][받은사람] > test[받은사람][보낸사람]
             ? test[보낸사람].추가선물++
             : null;
-          console.log(
-            "두 사람이 선물을 주고받은 기록이 있다면",
-            test[보낸사람].추가선물
-          );
+          //   console.log(
+          //     "두 사람이 선물을 주고받은 기록이 있다면",
+          //     test[보낸사람].추가선물
+          //   );
         }
       }
     });
@@ -110,7 +107,11 @@ function solution(friends, gifts) {
   const total = list(friends, gifts);
   field(total);
   answer1(total);
-  console.log(total);
+  const answers = friends.map((friend) => {
+    return total[friend].추가선물;
+  });
+
+  answer = Math.max.apply(null, answers);
   return answer;
 }
 
