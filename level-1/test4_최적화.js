@@ -13,7 +13,9 @@ function solution(name, yearning, photo) {
     answerMap.set(item, yearning[index]); // 이름을 키로 점수를 저장
   });
   return photo.map(
-    (item) => item.reduce((acc, cur) => acc + (answerMap.get(cur) ?? 0), 0) // item.reduce((acc, cur) => acc + (yearning[name[indexOf(cur)]] ?? 0), 0)
+    (item) =>
+      item.reduce((acc, cur) => acc + yearning[name.indexOf(cur)] ?? 0, 0) // item.reduce((acc, cur) => acc + (yearning[name.indexOf(cur)]??0), 0)
+    //   return photo.map((v)=> v.reduce((a, c)=> a += yearning[name.indexOf(c)] ?? 0, 0))
   ); // 초기값 0, answerMap.get(cur)가 undefined일 경우 0으로 처리
 }
 console.log(solution(names, yearning, photo)); // [19, 18, 18]
