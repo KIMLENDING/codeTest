@@ -21,6 +21,7 @@ function solution(park, routes) {
       const ny = y + dy * i;
       // 경계를 벗어나거나 장애물을 만나면 이동 중단
       if (
+        // !park[nx] || !park[nx][ny] || park[nx][ny] === "X" 이렇게 표현 가능
         nx < 0 ||
         ny < 0 ||
         nx >= park.length ||
