@@ -8,9 +8,7 @@ export function performanceTest(func, args, iterations = 100) {
     times.push(end - start);
   }
   const avgTime = times.reduce((sum, time) => sum + time, 0) / times.length;
-  console.log(
-    `Average execution time for ${func.name}: ${avgTime.toFixed(4)} ms`
-  );
+  console.log(`평균 실행 시간 ${func.name}: ${avgTime.toFixed(4)} ms`);
 }
 // 중간 크기의 배열 (100개 요소)
 export const mediumScore = Array.from(
