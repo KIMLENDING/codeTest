@@ -5,7 +5,7 @@ function solution(operations) {
   operations.forEach((operation) => {
     const [op, num] = operation.split(" ");
     if (op === "I") {
-      answer.push(Number(num));
+      answer.push(+num);
     } else if (op === "D" && answer.length > 0) {
       if (num === "1") {
         answer.splice(answer.indexOf(Math.max(...answer)), 1); // 최대값 삭제
