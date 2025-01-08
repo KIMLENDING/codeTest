@@ -20,8 +20,6 @@ function solution(m, n, puddles) {
 
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < m; j++) {
-      console.log(dp);
-      console.log(i, j);
       if (dp[i][j] === -1) {
         dp[i][j] = 0; // 물웅덩이는 경로 수 0
         continue;
