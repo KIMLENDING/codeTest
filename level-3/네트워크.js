@@ -1,4 +1,5 @@
-// https://school.programmers.co.kr/learn/courses/30/lessons/4316
+// https://school.programmers.co.kr/learn/courses/30/lessons/43162 //네트워크
+
 function solution(n, computers) {
   const visited = Array(n).fill(false); // 방문 여부
   let networkCount = 0;

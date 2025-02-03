@@ -1,4 +1,5 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/42884
+//https://school.programmers.co.kr/learn/courses/30/lessons/42884 //단속카메라
+
 function solution(routes) {
   var answer = 0;
   routes.sort((a, b) => {

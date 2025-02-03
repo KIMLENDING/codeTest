@@ -1,4 +1,4 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/67258
+//https://school.programmers.co.kr/learn/courses/30/lessons/67258 //보석 쇼핑
 function solution(gems) {
   var answer = [];
   const gemMap = new Map();

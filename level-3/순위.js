@@ -2,13 +2,12 @@
 function solution(n, results) {
   var answer = 0;
   const dist = Array.from({ length: n + 1 }, () => Array(n + 1).fill("무"));
-  console.log(dist);
 
   for (const [win, lose] of results) {
     dist[win][lose] = "승"; // win이 lose를 이김
     dist[lose][win] = "패"; // lose가 win에게 짐
   }
-  console.log(dist);
+
   // 플로이드-워셜 알고리즘 실행
   for (let k = 1; k <= n; k++) {
     // 중간노드 k
@@ -21,7 +20,7 @@ function solution(n, results) {
       }
     }
   }
-  console.log(dist);
+
   // n-1인 값 찾기(순위 확정 가능한 선수) 0이 자기 자신만 있는 선수
   answer = n;
   for (let i = 1; i <= n; i++) {

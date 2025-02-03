@@ -1,4 +1,5 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/12979
+//https://school.programmers.co.kr/learn/courses/30/lessons/12979 //기지국 설치
+
 function solution(n, stations, w) {
   let answer = 0;
   const cover = 2 * w + 1; // 전파가 닿는 거리

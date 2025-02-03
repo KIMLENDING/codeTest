@@ -1,4 +1,4 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/64064
+//https://school.programmers.co.kr/learn/courses/30/lessons/64064 //불량 사용자
 
 function solution(user_id, banned_id) {
   const isMask = (user, ban) => {
