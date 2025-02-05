@@ -9,10 +9,6 @@ function solution(gems) {
 
   while (end < gems.length) {
     // 1. 구간 확장: 보석 추가
-    console.log(gemMap.values());
-    console.log(gemMap.values().next());
-    console.log(gemMap.values().next().value);
-    console.log("----------------------");
     gemMap.set(gems[end], (gemMap.get(gems[end]) || 0) + 1);
     end++;
 

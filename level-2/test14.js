@@ -1,5 +1,4 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/250136
-import { performanceTest } from "../perFormanceTest.js";
 import { optimizedSolution } from "./최적화/test14_최적화.js";
 /**
  *
