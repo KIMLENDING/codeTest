@@ -1,5 +1,5 @@
 // 성능 테스트
-export function performanceTest(func, args, iterations = 100) {
+export function performanceTest(func, args, iterations = 1000) {
   const times = [];
   for (let i = 0; i < iterations; i++) {
     const start = performance.now();
