@@ -1,23 +1,30 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/64062
 function solution(stones, k) {
-  var answer = 0;
-  // 모든 배열 -1씩 후 answer 1 증가
-  // 단 -1을 하는 도중 k값 보다
-  let count = 0;
+  let left = 1;
+  let right = 200000000; // 가능한 최대 값
 
-  while (1) {
-    for (let i = 0; i < stones; i++) {
-      if (stones[i] === 0) {
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    let count = 0;
+    let maxZero = 0; // 연속된 0의 개수
+
+    for (let stone of stones) {
+      if (stone - mid <= 0) {
         count += 1;
-        if (count === k) return answer;
-        continue;
+        maxZero = Math.max(maxZero, count);
+      } else {
+        count = 0;
       }
-      stones[i] -= 1;
     }
-    answer += 1;
+
+    if (maxZero >= k) {
+      right = mid - 1; // 건널 수 없으면 범위를 줄임
+    } else {
+      left = mid + 1; // 건널 수 있으면 범위를 늘림
+    }
   }
 
-  return answer;
+  return left;
 }
 
 const stones = [2, 4, 5, 3, 2, 1, 4, 2, 5, 1];
